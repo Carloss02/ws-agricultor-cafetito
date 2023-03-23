@@ -1,0 +1,11 @@
+com\cafe\wsRest\postgresql\controller\MensajesController.class
+com\cafe\wsRest\mysql\model\MensajesMysqlModel.class
+com\cafe\wsRest\mysql\repository\MensajesMysqlRepository.class
+com\cafe\wsRest\postgresql\repository\MensajesRepository.class
+com\cafe\wsRest\postgresql\service\MensajesService.class
+com\cafe\wsRest\mysql\controller\MensajesMysqlController.class
+com\cafe\wsRest\postgresql\model\MensajesModel.class
+com\cafe\wsRest\mysql\service\MensajesMysqlService.class
+com\cafe\wsRest\WsRestApplication.class
+com\cafe\wsRest\config\MysqlConfig.class
+com\cafe\wsRest\config\PostgreSQLConfig.class
