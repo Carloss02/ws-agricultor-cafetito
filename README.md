@@ -7,4 +7,9 @@ Herramientas:
 - Java 8
 - Maven 3.9.0
 
-Código está en la rama "Master"
+Bases de datos: 
+
+- PostgreSQL (para beneficio de café)
+- MySQL (para Agricultor)
+
+El Código está en la rama "Master"
