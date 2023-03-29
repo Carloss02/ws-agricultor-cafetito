@@ -27,19 +27,19 @@ public class ParcialidadesMysql {
     private int idVenta;
     private int peso;
     private int estado;
-    private int idVehiculoAsignado;
+    private String placaVehiculoAsignado;
     private String usuarioCreacion;
     private Date fechaCreacion;
 
     public ParcialidadesMysql() {
     }
 
-    public ParcialidadesMysql(int idParcialidad, int idVenta, int peso, int estado, int idVehiculoAsignado, String usuarioCreacion, Date fechaCreacion) {
+    public ParcialidadesMysql(int idParcialidad, int idVenta, int peso, int estado, String placaVehiculoAsignado, String usuarioCreacion, Date fechaCreacion) {
         this.idParcialidad = idParcialidad;
         this.idVenta = idVenta;
         this.peso = peso;
         this.estado = estado;
-        this.idVehiculoAsignado = idVehiculoAsignado;
+        this.placaVehiculoAsignado = placaVehiculoAsignado;
         this.usuarioCreacion = usuarioCreacion;
         this.fechaCreacion = fechaCreacion;
     }
@@ -82,13 +82,13 @@ public class ParcialidadesMysql {
         this.estado = estado;
     }
 
-    @Column(name="ID_VEHICULO_ASIGNADO")
-    public int getIdVehiculoAsignado() {
-        return idVehiculoAsignado;
+    @Column(name="PLACA_VEHICULO_ASIGNADO")
+    public String getPlacaVehiculoAsignado() {
+        return placaVehiculoAsignado;
     }
 
-    public void setIdVehiculoAsignado(int idVehiculoAsignado) {
-        this.idVehiculoAsignado = idVehiculoAsignado;
+    public void setPlacaVehiculoAsignado(String idVehiculoAsignado) {
+        this.placaVehiculoAsignado = idVehiculoAsignado;
     }
 
     @Column(name="USUARIO_CREACION")
