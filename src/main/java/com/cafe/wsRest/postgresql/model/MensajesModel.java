@@ -26,10 +26,11 @@ public class MensajesModel implements Serializable {
     private String estadoMensaje;   
     private Date fechaCreacion;
     private String usuarioCreacion;
+    private float peso;
     public MensajesModel() {
     }
 
-    public MensajesModel(int idMensaje, int idAgricultor, String idCuenta, String placaVehiculo, int idParcialidad, String mensaje, String estadoMensaje, Date fechaCreacion, String usuarioCreacion) {
+    public MensajesModel(int idMensaje, int idAgricultor, String idCuenta, String placaVehiculo, int idParcialidad, String mensaje, String estadoMensaje, Date fechaCreacion, String usuarioCreacion, float peso) {
         this.idMensaje = idMensaje;
         this.idAgricultor = idAgricultor;
         this.idCuenta = idCuenta;
@@ -39,6 +40,7 @@ public class MensajesModel implements Serializable {
         this.estadoMensaje = estadoMensaje;
         this.fechaCreacion = fechaCreacion;
         this.usuarioCreacion = usuarioCreacion;
+        this.peso = peso;
     }
 
     @Id
@@ -123,6 +125,15 @@ public class MensajesModel implements Serializable {
 
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
+    }
+
+    @Column(name="peso")
+    public float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(float peso) {
+        this.peso = peso;
     }
     
     
