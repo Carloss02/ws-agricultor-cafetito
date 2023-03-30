@@ -36,4 +36,8 @@ public class TransportistasVehiculoServiceMysql {
     public TransportistasVehiculoMysql editTransportistaAsignado(TransportistasVehiculoMysql transportistaAsignado){
         return transportistasVehiculoRepository.save(transportistaAsignado);
     }
+    
+    public List<TransportistasVehiculoMysql> prueba(Integer id){
+        return transportistasVehiculoRepository.findByIdVehiculoAsignado(id);
+    }
 }

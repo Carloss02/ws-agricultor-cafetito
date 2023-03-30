@@ -6,6 +6,7 @@
 package com.cafe.wsRest.mysql.repository;
 
 import com.cafe.wsRest.mysql.model.CuentaVehiculosMysql;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -14,4 +15,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface CuentaVehiculosRepositoryMysql extends JpaRepository<CuentaVehiculosMysql, Integer>{
     
+    List<CuentaVehiculosMysql> findByIdVenta(Integer idVenta);
 }

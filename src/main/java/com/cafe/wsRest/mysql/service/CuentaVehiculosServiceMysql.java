@@ -36,5 +36,8 @@ public class CuentaVehiculosServiceMysql {
     public CuentaVehiculosMysql editVehiculoAsignado(CuentaVehiculosMysql vehiculoAsignado){
         return cuentaVehiculosService.save(vehiculoAsignado);
     }
+    public List<CuentaVehiculosMysql> prueba2(Integer idVenta){
+        return cuentaVehiculosService.findByIdVenta(idVenta);
+    }
     
 }

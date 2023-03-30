@@ -11,6 +11,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cafe.wsRest.mysql.repository.BitacoraRepositoryMysql;
+import com.google.gson.Gson;
+import java.util.Date;
 
 /**
  *
@@ -31,6 +33,20 @@ public class BitacoraServiceMysql {
     
     public BitacoraMysql addBitacora(BitacoraMysql bitacora){
         return bitacoraRepository.save(bitacora);
+    }
+    
+    public void addRecord(String tableName, String id, char typeOperation, Object data, Integer usuario){
+        
+        bitacoraRepository.save(
+                BitacoraMysql.builder()
+                .nombreTabla(tableName)
+                .idRegistro(id)
+                .tipoOperacion(typeOperation)
+                .datos(new Gson().toJson(data))
+                .fechaCreacion(new Date())
+                .usuarioCreacion("WEB SERVICE")
+                .build()
+        );
     }
     
 }

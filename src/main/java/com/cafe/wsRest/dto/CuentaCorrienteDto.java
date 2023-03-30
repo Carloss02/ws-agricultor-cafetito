@@ -11,18 +11,18 @@ import java.util.List;
  *
  * @author TopVargas
  */
-public class SolicitudDto {
+public class CuentaCorrienteDto {
     
     private Integer idVenta;
     private Integer idAgricultor;
     private float pesoTotalCafe;
     private Integer cantidadParcialidades;
-    private List<SolicitudVehiculosDto> vehiculos;
+    private List<CuentaVehiculosDto> vehiculos;
 
-    public SolicitudDto() {
+    public CuentaCorrienteDto() {
     }
 
-    public SolicitudDto(Integer idVenta, Integer idAgricultor, float pesoTotalCafe, Integer cantidadParcialidades, List<SolicitudVehiculosDto> vehiculos) {
+    public CuentaCorrienteDto(Integer idVenta, Integer idAgricultor, float pesoTotalCafe, Integer cantidadParcialidades, List<CuentaVehiculosDto> vehiculos) {
         this.idVenta = idVenta;
         this.idAgricultor = idAgricultor;
         this.pesoTotalCafe = pesoTotalCafe;
@@ -62,14 +62,13 @@ public class SolicitudDto {
         this.cantidadParcialidades = cantidadParcialidades;
     }
 
-    public List<SolicitudVehiculosDto> getVehiculos() {
+    public List<CuentaVehiculosDto> getVehiculos() {
         return vehiculos;
     }
 
-    public void setVehiculos(List<SolicitudVehiculosDto> vehiculos) {
+    public void setVehiculos(List<CuentaVehiculosDto> vehiculos) {
         this.vehiculos = vehiculos;
     }
-    
     
     
 }

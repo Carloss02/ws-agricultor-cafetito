@@ -5,6 +5,9 @@
  */
 package com.cafe.wsRest.mysql.controller;
 
+import com.cafe.wsRest.dto.CuentaCorrienteDto;
+import com.cafe.wsRest.dto.RespuestaCuentaDto;
+import com.cafe.wsRest.dto.SolicitudDto;
 import com.cafe.wsRest.mysql.model.CuentaCorrienteMysql;
 import com.cafe.wsRest.mysql.service.CuentaCorrienteServiceMysql;
 import io.swagger.v3.oas.annotations.Operation;
@@ -51,5 +54,29 @@ public class CuentaCorrienteControllerMysql {
     @PutMapping
     public CuentaCorrienteMysql editCuenta(@RequestBody CuentaCorrienteMysql cuenta){
         return cuentaService.editCuenta(cuenta);
+    }
+    
+    @Operation(summary = "Obtiene una cuenta")
+    @GetMapping("/prueba/{estado}")
+    public List<CuentaCorrienteMysql> getCuentaEstado(@PathVariable Integer estado){
+        return cuentaService.cuenta(estado);
+    }
+    
+    @Operation(summary = "Obtiene las cuentas en base a su estado")
+    @GetMapping("/corriente/{estado}")
+    public List<CuentaCorrienteDto> getCuentaByStatus(@PathVariable Integer estado){
+        return cuentaService.getCuentasByStatus(estado);
+    }
+    
+    @Operation(summary = "Obtiene el detalle de cada cuenta en base a su estado")
+    @GetMapping("/corriente/details/{estado}")
+    public List<SolicitudDto> getCuentaDetailsByStatus(@PathVariable Integer estado){
+        return cuentaService.getAllCuentaDetailssByStatus(estado);
+    }
+    
+    @Operation(summary = "Agrega mensaje de la trasación de la cuenta y modifica en base al objeto la cuenta")
+    @PostMapping("/crear")
+    public RespuestaCuentaDto transactionsCuenta(@RequestBody RespuestaCuentaDto cuenta){
+        return cuentaService.transactionsCuenta(cuenta);
     }
 }

@@ -52,4 +52,10 @@ public class TransportistasVehiculoControllerMysql {
     public TransportistasVehiculoMysql editVehiculo(@RequestBody TransportistasVehiculoMysql transportistaAsignado){
         return transportistaVehiculoService.editTransportistaAsignado(transportistaAsignado);
     }
+    
+    @Operation(summary = "Obtiene un transportista asignado a un vehiculo")
+    @GetMapping("/prueba/{id}")
+    public List<TransportistasVehiculoMysql> vehiculoPrueba(@PathVariable Integer id){
+        return transportistaVehiculoService.prueba(id);
+    }
 }

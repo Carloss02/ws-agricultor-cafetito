@@ -13,11 +13,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import lombok.Builder;
 
 /**
  *
  * @author carlo
  */
+@Builder
 @Entity
 @Table(name="MENSAJES"
     ,catalog="dbagricultor"

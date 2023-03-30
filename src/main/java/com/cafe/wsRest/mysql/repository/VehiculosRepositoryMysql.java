@@ -5,8 +5,12 @@
  */
 package com.cafe.wsRest.mysql.repository;
 
+import com.cafe.wsRest.dto.SolicitudVehiculosDto;
 import com.cafe.wsRest.mysql.model.VehiculosMysql;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 /**
  *
@@ -14,4 +18,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface VehiculosRepositoryMysql extends JpaRepository<VehiculosMysql, String>{
     
+    /*@Query(value="select v.PLACA as placa,\n"
+            + "		v.MARCA as marca,\n"
+            + "		v.MODELO as modelo,\n"
+            + "		v.ANIO as anio,\n"
+            + "		v.COLOR as color,\n"
+            + "		v.TIPO_VEHICULO as tipoVehiculo,\n"
+            + "		v.PESO_ESTIMADO as capacidad,\n"
+            + "         v.ESTADO as estado\n"
+            + "from dbagricultor.VEHICULOS v \n"
+            + "where v.PLACA in (:placas)", nativeQuery = true)
+    List<VehiculosMysql> getVehiculosByIds(@Param("placas") List<String> placas);*/
 }

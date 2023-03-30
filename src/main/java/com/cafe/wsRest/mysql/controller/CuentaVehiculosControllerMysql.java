@@ -52,4 +52,10 @@ public class CuentaVehiculosControllerMysql {
     public CuentaVehiculosMysql editVehiculo(@RequestBody CuentaVehiculosMysql vehiculo){
         return CuentaVehiculosService.editVehiculoAsignado(vehiculo);
     }
+    
+    @Operation(summary = "Obtiene un vehiculo asignado a una cuenta")
+    @GetMapping("/venta/{idVenta}")
+    public List<CuentaVehiculosMysql> getVehiculo(@PathVariable Integer idVenta){
+        return CuentaVehiculosService.prueba2(idVenta);
+    }
 }
