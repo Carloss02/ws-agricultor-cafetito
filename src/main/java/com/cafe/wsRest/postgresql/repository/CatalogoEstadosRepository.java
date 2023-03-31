@@ -13,5 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author TopVargas
  */
 public interface CatalogoEstadosRepository extends JpaRepository<CatalogoEstados, Integer>{
+    public CatalogoEstados findByCodigoEstado(Integer codigoEstado);
     
 }

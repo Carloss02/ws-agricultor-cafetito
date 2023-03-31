@@ -22,8 +22,8 @@ public class VehiculosServiceMysql {
     @Autowired
     private VehiculosRepositoryMysql vehiculosRepository;
     
-    public Optional<VehiculosMysql> getVehiculoById(String placa){
-        return vehiculosRepository.findById(placa);
+    public VehiculosMysql getVehiculoById(String placa){
+        return vehiculosRepository.findByPlaca(placa);
     }
     
     public List<VehiculosMysql> getVehiculos(){

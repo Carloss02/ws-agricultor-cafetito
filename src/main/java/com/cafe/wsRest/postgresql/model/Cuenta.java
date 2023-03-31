@@ -39,7 +39,7 @@ public class Cuenta {
     }
 
     @Id
-    @Column(name = "id_mensaje")
+    @Column(name = "id_cuenta")
     public String getIdCuenta() {
         return idCuenta;
     }

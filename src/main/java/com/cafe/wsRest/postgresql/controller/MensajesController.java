@@ -5,6 +5,8 @@
  */
 package com.cafe.wsRest.postgresql.controller;
 
+import com.cafe.wsRest.dto.MensajeCuentaConfirmadaDto;
+import com.cafe.wsRest.dto.MensajeIngresoDenegadoDto;
 import com.cafe.wsRest.mysql.model.MensajesMysql;
 import com.cafe.wsRest.mysql.service.MensajesServiceMysql;
 import com.cafe.wsRest.postgresql.model.MensajesModel;
@@ -28,13 +30,23 @@ public class MensajesController {
     
     @Autowired
     private MensajesService mensajeService; 
-    @Autowired
-    private MensajesServiceMysql mensajeMysqlService; 
     
     @Operation(summary = "obtener todos los mensajes en el sistema del beneficio de café")
     @GetMapping("/all")
     public List<MensajesModel> getAllMensajes(){
         return mensajeService.getAllMensajes();
+    }
+    
+    @Operation(summary = "Notificar ingreso denegado")
+    @PostMapping("/enviar")
+    public MensajeIngresoDenegadoDto notificarIngresoDenegado(@RequestBody MensajeIngresoDenegadoDto mensaje){
+        return mensajeService.enviarMensajeAgricultor(mensaje);
+    }
+    
+    @Operation(summary = "obtener todos los mensajes en el sistema del beneficio de café")
+    @PostMapping("/msgCuentaConfirmada")
+    public MensajeCuentaConfirmadaDto mensajeConfirmarCuenta(@RequestBody MensajeCuentaConfirmadaDto mensaje){
+        return mensajeService.enviarMensajeCuentaConfirmada(mensaje);
     }
     
 }

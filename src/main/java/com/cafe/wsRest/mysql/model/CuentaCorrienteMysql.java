@@ -25,7 +25,7 @@ import lombok.Builder;
     ,catalog="dbagricultor"
 )
 public class CuentaCorrienteMysql {
-    private int idventa;
+    private int idVenta;
     private String noCuenta;
     private int idAgricultor;
     private int estado;
@@ -35,8 +35,8 @@ public class CuentaCorrienteMysql {
     public CuentaCorrienteMysql() {
     }
 
-    public CuentaCorrienteMysql(int idventa, String noCuenta, int idAgricultor, int estado, String usuarioCreacion, Date fechaCreacion) {
-        this.idventa = idventa;
+    public CuentaCorrienteMysql(int idVenta, String noCuenta, int idAgricultor, int estado, String usuarioCreacion, Date fechaCreacion) {
+        this.idVenta = idVenta;
         this.noCuenta = noCuenta;
         this.idAgricultor = idAgricultor;
         this.estado = estado;
@@ -47,12 +47,12 @@ public class CuentaCorrienteMysql {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID_VENTA")
-    public int getIdventa() {
-        return idventa;
+    public int getIdVenta() {
+        return idVenta;
     }
 
-    public void setIdventa(int idventa) {
-        this.idventa = idventa;
+    public void setIdVenta(int idventa) {
+        this.idVenta = idventa;
     }
 
     @Column(name="NO_CUENTA")

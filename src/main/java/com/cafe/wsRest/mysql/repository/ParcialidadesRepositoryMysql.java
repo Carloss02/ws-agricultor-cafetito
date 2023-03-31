@@ -6,6 +6,7 @@
 package com.cafe.wsRest.mysql.repository;
 
 import com.cafe.wsRest.mysql.model.ParcialidadesMysql;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -13,5 +14,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author carlo
  */
 public interface ParcialidadesRepositoryMysql extends JpaRepository<ParcialidadesMysql, Integer>{
+    public List<ParcialidadesMysql> findByIdVenta(Integer idVenta);
     
+    public ParcialidadesMysql findByPlacaVehiculoAsignadoAndEstado(String placa, Integer estado);
 }

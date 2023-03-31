@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -99,6 +100,7 @@ public class Pesaje {
     }
 
     @Column(name = "fecha_creacion")
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     public Date getFechaCreacion() {
         return fechaCreacion;
     }

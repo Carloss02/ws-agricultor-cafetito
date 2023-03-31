@@ -13,5 +13,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author TopVargas
  */
 public interface ParcialidadRepository extends JpaRepository<Parcialidad, Integer>{
-    
+    public Parcialidad findByIdParcialidad(Integer idParcialidad);
 }

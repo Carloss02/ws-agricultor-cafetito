@@ -36,7 +36,7 @@ public class EstadosControllerMysql {
     
     @Operation(summary = "Obtiene estado por Id")
     @GetMapping("/{codigoEstado}")
-    public Optional<EstadosMysql> getEstadoById(@PathVariable int codigoEstado){
+    public EstadosMysql getEstadoById(@PathVariable int codigoEstado){
         return estadosService.getEstadosById(codigoEstado);
     }
     

@@ -5,8 +5,10 @@
  */
 package com.cafe.wsRest.mysql.controller;
 
+import com.cafe.wsRest.dto.VehiculoEnRutaDto;
 import com.cafe.wsRest.mysql.model.ParcialidadesMysql;
 import com.cafe.wsRest.mysql.service.ParcialidadesServiceMysql;
+import com.cafe.wsRest.postgresql.model.MensajesModel;
 import io.swagger.v3.oas.annotations.Operation;
 import java.util.List;
 import java.util.Optional;
@@ -36,9 +38,15 @@ public class ParcialidadesControllerMysql {
     }
     
     @Operation(summary = "Obtiene una parcialidad")
-    @GetMapping("/{idParcialidad}")
+    @GetMapping("/parcialidad/{idParcialidad}")
     public Optional<ParcialidadesMysql> getParcialidad(@PathVariable int idParcialidad){
         return parcialidadService.getParcialidadById(idParcialidad);
+    }
+    
+    @Operation(summary = "Obtiene una parcialidad por IdVenta")
+    @GetMapping("/{idVenta}")
+    public List<ParcialidadesMysql> getParcialidadByIdVenta(@PathVariable Integer idVenta){
+        return parcialidadService.getParcialidadByIdVenta(idVenta);
     }
     
     @Operation(summary = "Registrar una parcialidad")
@@ -47,9 +55,23 @@ public class ParcialidadesControllerMysql {
         return parcialidadService.addParcialidad(parcialidad);
     }
     
-    @Operation(summary = "Registrar una parcialidad")
+    @Operation(summary = "Editar una parcialidad")
     @PutMapping
     public ParcialidadesMysql editParcialidad(@RequestBody ParcialidadesMysql parcialidad){
         return parcialidadService.editParcialidad(parcialidad);
     }
+    
+    @Operation(summary = "Enviar una Parcialidad")
+    @PutMapping("/agricultor/enviarParcialidad")
+    public MensajesModel enviarParcialidad(@RequestBody ParcialidadesMysql parcialidad){
+        return parcialidadService.sendParcialidad(parcialidad);
+    }
+    
+    @Operation(summary = "Obtiene una parcialidad por placa y estado En Ruta")
+    @GetMapping("/agricultor/parcialidadEnRuta/{placa}")
+    public VehiculoEnRutaDto getParcialidadEnRuta(@PathVariable String placa){
+        System.out.println(placa + " - PLACA");
+        return parcialidadService.getParcialidadEnRutaByPlaca(placa);
+    }
+    
 }

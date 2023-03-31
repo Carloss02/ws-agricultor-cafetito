@@ -13,5 +13,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author TopVargas
  */
 public interface CuentaRepository extends JpaRepository<Cuenta, String>{
-    
+    public Cuenta findByIdCuenta(String cuenta);
 }

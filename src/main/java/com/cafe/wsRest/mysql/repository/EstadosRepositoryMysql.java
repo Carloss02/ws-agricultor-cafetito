@@ -13,5 +13,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author carlo
  */
 public interface EstadosRepositoryMysql extends JpaRepository<EstadosMysql, Integer> {
-    
+    public EstadosMysql findByCodigoEstado(Integer codigoEstado);
 }

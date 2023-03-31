@@ -18,6 +18,8 @@ import org.springframework.data.repository.query.Param;
  */
 public interface VehiculosRepositoryMysql extends JpaRepository<VehiculosMysql, String>{
     
+    VehiculosMysql findByPlaca(String placa);
+    
     /*@Query(value="select v.PLACA as placa,\n"
             + "		v.MARCA as marca,\n"
             + "		v.MODELO as modelo,\n"

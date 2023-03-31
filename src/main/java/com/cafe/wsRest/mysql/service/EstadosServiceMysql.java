@@ -25,8 +25,8 @@ public class EstadosServiceMysql {
         return  estadosRepository.findAll();
     }
     
-    public Optional<EstadosMysql> getEstadosById(int codigoEstado){
-        return estadosRepository.findById(codigoEstado);
+    public EstadosMysql getEstadosById(int codigoEstado){
+        return estadosRepository.findByCodigoEstado(codigoEstado);
     }
     
     public EstadosMysql addEstado(EstadosMysql estado){

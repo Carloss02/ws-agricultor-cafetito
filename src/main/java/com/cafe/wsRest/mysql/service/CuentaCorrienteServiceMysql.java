@@ -59,8 +59,8 @@ public class CuentaCorrienteServiceMysql {
     private BitacoraServiceMysql bitacoraServiceMysql;
     
 
-    public Optional<CuentaCorrienteMysql> getCuentaById(int idVenta){
-        return cuentaRepository.findById(idVenta);
+    public CuentaCorrienteMysql getCuentaById(int idVenta){
+        return cuentaRepository.findByIdVenta(idVenta);
     }
     
     public List<CuentaCorrienteMysql> getCuentas(){
@@ -87,7 +87,7 @@ public class CuentaCorrienteServiceMysql {
         List<CuentaCorrienteDto> lista = cuenta
                 .stream()
                 .map(c
-                        -> new CuentaCorrienteDto(c.getIdventa(), c.getIdAgricultor(), 0, 0, cuentaVehiculoRepositoryMysql.findByIdVenta(c.getIdventa())
+                        -> new CuentaCorrienteDto(c.getIdVenta(), c.getIdAgricultor(), 0, 0, cuentaVehiculoRepositoryMysql.findByIdVenta(c.getIdVenta())
                         .stream()
                         .map(v
                                 -> new CuentaVehiculosDto(v.getPlacaVehiculoAsignado(), transportistasVehiculosRepositoryMysql.findByIdVehiculoAsignado(v.getIdVehiculoAsignado())
@@ -178,7 +178,7 @@ public class CuentaCorrienteServiceMysql {
      }
      cuentaRepository.save(cuenta);
 
-     bitacoraServiceMysql.addRecord("CUENTA_CORRIENTE", String.valueOf(cuenta.getIdventa()), 'U', cuenta, 3);
+     bitacoraServiceMysql.addRecord("CUENTA_CORRIENTE", String.valueOf(cuenta.getIdVenta()), 'U', cuenta, 3);
      
      MensajesMysql msg = mensajeMyqlRepository.save(
              MensajesMysql.builder()

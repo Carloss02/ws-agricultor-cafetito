@@ -5,6 +5,7 @@
  */
 package com.cafe.wsRest.postgresql.service;
 
+import com.cafe.wsRest.postgresql.model.Parcialidad;
 import com.cafe.wsRest.postgresql.repository.ParcialidadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,4 +19,9 @@ public class ParcialidadService {
     
     @Autowired
     private ParcialidadRepository parcialidadRepository;
+    
+    
+    public Parcialidad getParcialidadById(int idParcialidad){
+        return parcialidadRepository.findByIdParcialidad(idParcialidad);
+    }
 }

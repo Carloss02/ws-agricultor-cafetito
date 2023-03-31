@@ -37,7 +37,7 @@ public class VehiculosControllerMysql {
     
     @Operation(summary = "Obtiene un vehiculo")
     @GetMapping("/{placa}")
-    public Optional<VehiculosMysql> getVehiculo(@PathVariable String placa){
+    public VehiculosMysql getVehiculoByPlaca(@PathVariable String placa){
         return vehiculoService.getVehiculoById(placa);
     }
     

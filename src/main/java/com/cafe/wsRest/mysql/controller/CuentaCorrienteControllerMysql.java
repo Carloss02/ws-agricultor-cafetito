@@ -40,7 +40,7 @@ public class CuentaCorrienteControllerMysql {
     
     @Operation(summary = "Obtiene una cuenta")
     @GetMapping("/{idVenta}")
-    public Optional<CuentaCorrienteMysql> getCuenta(@PathVariable int idVenta){
+    public CuentaCorrienteMysql getCuenta(@PathVariable int idVenta){
         return cuentaService.getCuentaById(idVenta);
     }
     

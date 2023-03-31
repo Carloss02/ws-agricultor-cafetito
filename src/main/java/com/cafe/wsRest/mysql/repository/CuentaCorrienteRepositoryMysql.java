@@ -16,4 +16,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface CuentaCorrienteRepositoryMysql extends JpaRepository<CuentaCorrienteMysql, Integer> {
     
     List<CuentaCorrienteMysql> findByEstado(Integer estado);
+    CuentaCorrienteMysql findByIdVenta(Integer idVenta);
+    CuentaCorrienteMysql findByNoCuenta(String noCUenta);
 }

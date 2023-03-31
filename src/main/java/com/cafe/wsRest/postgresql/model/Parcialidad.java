@@ -89,7 +89,7 @@ public class Parcialidad {
         this.placaVehiculoAsignacion = placaVehiculoAsignacion;
     }
 
-    @Column(name="fecha_creacion")
+    @Column(name="feche_creacion")
     public Date getFehcaCreacion() {
         return fehcaCreacion;
     }
